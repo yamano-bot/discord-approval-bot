@@ -70,10 +70,10 @@ client.on("messageReactionAdd", async (reaction, user) => {
   let webhookUrl = null;
   let channelLabel = "";
 
-  if (content.includes("案1️⃣") || content.includes("案2️⃣") || content.includes("案3️⃣")) {
+  if (content.includes("案1") || content.includes("案2") || content.includes("案3")) {
     webhookUrl = JAPANESE_WEBHOOK;
     channelLabel = "日本語で話そう";
-  } else if (content.includes("案4️⃣") || content.includes("案5️⃣") || content.includes("案6️⃣")) {
+  } else if (content.includes("案4") || content.includes("案5") || content.includes("案6")) {
     webhookUrl = OSUSUME_WEBHOOK;
     channelLabel = "おすすめ";
   } else {
