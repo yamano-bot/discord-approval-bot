@@ -66,20 +66,9 @@ client.on("messageReactionAdd", async (reaction, user) => {
   const content = message.content || "";
   console.log(`👍 reaction detected. Message content: ${content}`);
 
-  // 転送先を判定
-  let webhookUrl = null;
-  let channelLabel = "";
-
-  if (content.includes("案1") || content.includes("案2") || content.includes("案3")) {
-    webhookUrl = JAPANESE_WEBHOOK;
-    channelLabel = "日本語で話そう";
-  } else if (content.includes("案4") || content.includes("案5") || content.includes("案6")) {
-    webhookUrl = OSUSUME_WEBHOOK;
-    channelLabel = "おすすめ";
-  } else {
-    console.log("No matching case pattern found. Skipping.");
-    return;
-  }
+  // 👍がついたら無条件に日本語で話そうへ転送
+  const webhookUrl = JAPANESE_WEBHOOK;
+  const channelLabel = "日本語で話そう";
 
   // Webhook に転送
   try {
