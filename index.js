@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
 
 const APPROVAL_CHANNEL_ID = "1488142332477050880";
-const APPROVAL_EMOJI = "✅";
+const APPROVAL_EMOJI = "👍";
 
 const JAPANESE_WEBHOOK = process.env.JAPANESE_WEBHOOK;
 const OSUSUME_WEBHOOK = process.env.OSUSUME_WEBHOOK;
@@ -64,7 +64,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
   }
 
   const content = message.content || "";
-  console.log(`✅ reaction detected. Message content: ${content}`);
+  console.log(`👍 reaction detected. Message content: ${content}`);
 
   // 転送先を判定
   let webhookUrl = null;
